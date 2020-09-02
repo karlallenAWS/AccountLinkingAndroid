@@ -16,6 +16,8 @@ public class AlexaAppUtils {
     private static long REQUIRED_MINIMUM_VERSION_CODE = 866607211;
 
     public Boolean doesAlexaAppSupportAppToApp(Context theContext) {
+        //TODO:  Need to better understand why Pie is required for App linking to Alexa.  It works fine in Oreo
+        // For now this routine aways returns true
         Boolean retVal = true;
         Log.d(TAG, "--------START--------");
 

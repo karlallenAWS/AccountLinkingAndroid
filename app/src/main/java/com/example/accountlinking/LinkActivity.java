@@ -2,6 +2,7 @@ package com.example.accountlinking;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,6 +10,8 @@ import android.util.Log;
 
 public class LinkActivity extends AppCompatActivity {
     private static final String TAG = "LinkActivity";
+    private static final String codeParmName = "code";
+    private static final String stateParmName = "state";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +29,19 @@ public class LinkActivity extends AppCompatActivity {
     }
 
     private void handleIntent(Intent intent) {
-        Log.d(TAG, "Handling linkback");
+        Log.d(TAG, "Handling LinkActivity Intent");
         String appLinkAction = intent.getAction();
         Uri appLinkData = intent.getData();
         Log.d(TAG, "Link data: " + appLinkData);
+
         if (Intent.ACTION_VIEW.equals(appLinkAction) && appLinkData != null){
-            String lastPathSegment = appLinkData.getLastPathSegment();
-            Log.d(TAG, "Last Segment: " + lastPathSegment);
-//            Uri appData = Uri.parse("content://com.recipe_app/recipe/").buildUpon()
-//                    .appendPath(recipeId).build();
-//            showRecipe(appData);
+            String theCode = appLinkData.getQueryParameter(codeParmName);
+            String theState = appLinkData.getQueryParameter(stateParmName);
+            Log.d(TAG, "Code: " + theCode + " State: "+ theState);
+
+            // Complete the linking process
+            BackendHelper backend = new BackendHelper();
+            backend.completeAccountLinking(theCode, theState, getApplicationContext());
         } else {
             Log.d(TAG, "App link action was not valid");
         }
