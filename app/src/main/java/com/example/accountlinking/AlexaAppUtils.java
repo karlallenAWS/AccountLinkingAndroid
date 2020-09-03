@@ -10,7 +10,7 @@ import android.util.Log;
 import java.util.List;
 
 public class AlexaAppUtils {
-    private static final String TAG = "AlexaAppUtils";
+    private static final String TAG = AlexaAppUtils.class.getName();
     private static String ALEXA_PACKAGE_NAME = "com.amazon.dee.app";
     private static String ALEXA_APP_TARGET_ACTIVITY_NAME = "com.amazon.dee.app.ui.main.MainActivity";
     private static long REQUIRED_MINIMUM_VERSION_CODE = 866607211;

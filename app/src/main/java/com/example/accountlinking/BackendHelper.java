@@ -15,7 +15,7 @@ import org.json.JSONObject;
 import java.lang.annotation.Target;
 
 public class BackendHelper {
-    private static final String TAG = "BackendHelper";
+    private static final String TAG = BackendHelper.class.getName();
     private static String backendURL = "https://9w2unnk8l9.execute-api.us-west-1.amazonaws.com/dev/account-exchange";
 
     public void completeAccountLinking(String authCode, String theState, Context theContext) {

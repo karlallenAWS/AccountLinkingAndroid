@@ -10,7 +10,7 @@ import android.util.Log;
 import java.util.List;
 
 public class AccountLinkingHelper {
-    private static final String TAG = "AccountLinkingHelper";
+    private static final String TAG = AccountLinkingHelper.class.getName();
 
     private Intent getAppToAppIntent(String appToUrl) {
         Intent retVal = new Intent(Intent.ACTION_VIEW, Uri.parse(appToUrl));

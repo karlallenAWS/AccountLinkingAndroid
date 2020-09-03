@@ -52,44 +52,6 @@ public class FirstFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "Button action");
-//                String url = "https://9w2unnk8l9.execute-api.us-west-1.amazonaws.com/dev/account-auth";
-//                AsyncHttpClient client = new AsyncHttpClient();
-//                JSONObject jsonParams = new JSONObject();
-//                try {
-//                    jsonParams.put("Parm1", parmVal1);
-//                    jsonParams.put("Parm2", parmVal2);
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//
-//                StringEntity entity = null;
-//                entity = new StringEntity(jsonParams.toString(), "UTF-8");
-//                if (entity != null) {
-//                    Context theContext = getContext();
-//                    client.post(theContext, url, entity, "application/json", new JsonHttpResponseHandler() {
-//                        @Override
-//                        public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-//                            // Root JSON in response is an dictionary i.e { "data : [ ... ] }
-//                            // Handle resulting parsed JSON response here
-//                            Log.d(TAG, "Successful call to backend");
-//                            try {
-//                                Log.d(TAG, "Access Token: " + response.getString("access_token"));
-//                                Log.d(TAG, "Refresh Token: " + response.getString("refresh_token"));
-//                                Log.d(TAG, "We are done here");
-//                            } catch (JSONException e) {
-//                                e.printStackTrace();
-//                            }
-//                        }
-//
-//                        @Override
-//                        public void onFailure(int statusCode, Header[] headers, String res, Throwable t) {
-//                            // called when response HTTP status is "4XX" (eg. 401, 403, 404)
-//                            Log.e(TAG, "Failed call to backend.  Status: " + statusCode + "Reason: " + res);
-//                        }
-//                    });
-//                } else {
-//                    Log.e(TAG, "String entity was null!!");
-//                }
 
                 String alexaAppUrl = alexaURL + clientID + scope + skillStage + responseType + redirectURI + state;
                 String lwaFallbackUrl = lwaURL + clientID + scope + responseType + redirectURI + state;

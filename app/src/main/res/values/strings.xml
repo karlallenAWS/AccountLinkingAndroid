@@ -9,6 +9,7 @@
 
     <string name="hello_first_fragment">Welcome to Account Linking</string>
     <string name="hello_second_fragment">Link me up. Arg: %1$s</string>
-    <string name="title_second_fragment">Continue Account Linking</string>
+    <string name="title_second_fragment">Completed Account Linking</string>
+    <string name="title_activity_l_w_a">LWAActivity</string>
 
 </resources>

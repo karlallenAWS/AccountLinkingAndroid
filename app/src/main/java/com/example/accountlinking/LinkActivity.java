@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 public class LinkActivity extends AppCompatActivity {
-    private static final String TAG = "LinkActivity";
+    private static final String TAG = LinkActivity.class.getName();
     private static final String codeParmName = "code";
     private static final String stateParmName = "state";
 
